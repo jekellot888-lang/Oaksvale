@@ -1,0 +1,345 @@
+/* Contact page + form. Tokens from tokens.css; buttons and labels from main.css. */
+
+.contact {
+  padding: calc(var(--space-3xl) + var(--space-sm)) var(--gutter) var(--space-4xl);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.contact__aside {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.contact__title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+.contact__lede {
+  max-width: 40ch;
+  font-size: var(--text-lg);
+  color: var(--color-ink-soft);
+}
+
+.contact__notice {
+  padding: var(--space-sm) var(--space-md);
+  border-left: 2px solid var(--color-brass);
+  background: var(--color-paper-2);
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.contact__details {
+  display: grid;
+  gap: var(--space-md);
+  margin: 0;
+  padding-top: var(--space-md);
+  border-top: var(--rule-hair) solid var(--color-rule);
+}
+
+.contact__details dd {
+  margin: var(--space-3xs) 0 0;
+}
+
+.contact__phones {
+  display: grid;
+  gap: var(--space-3xs);
+}
+
+.contact__phones span {
+  color: var(--color-ink-soft);
+}
+
+.contact__phones a {
+  white-space: nowrap;
+}
+
+/* ───────────── Form ───────────── */
+.contact__panel {
+  padding: var(--space-xl);
+  background: var(--color-paper-2);
+}
+
+.cform {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.cform__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2xs);
+  align-content: start;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field label,
+.field legend {
+  padding: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.field__opt {
+  font-weight: 400;
+  color: var(--color-ink-soft);
+}
+
+.field input[type='text'],
+.field input[type='email'],
+.field input[type='tel'],
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 2.875rem;
+  padding: 0.6rem 0.75rem;
+  border: var(--rule-hair) solid var(--color-field-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-field);
+  color: var(--color-ink);
+  font: inherit;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.field textarea {
+  min-height: 9rem;
+  resize: vertical;
+  line-height: var(--leading-body);
+}
+
+.field select {
+  appearance: none;
+  padding-right: 2.25rem;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.15rem) 50%,
+    calc(100% - 0.8rem) 50%;
+  background-size: 0.35rem 0.35rem;
+  background-repeat: no-repeat;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .field input:hover,
+  .field select:hover,
+  .field textarea:hover {
+    border-color: var(--color-ink-soft);
+  }
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  border-color: var(--color-ink);
+}
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+  border-color: var(--color-error);
+}
+
+.field__hint {
+  font-size: var(--text-xs);
+  color: var(--color-ink-soft);
+}
+
+.field__error {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-error);
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-lg);
+  margin-top: var(--space-3xs);
+}
+
+.field .choice {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.choice input {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.2rem 0 0;
+  accent-color: var(--color-ink);
+  cursor: pointer;
+}
+
+.choice--consent span {
+  max-width: 60ch;
+  font-size: var(--text-sm);
+}
+
+.cform__summary {
+  padding: var(--space-sm) var(--space-md);
+  border: var(--rule-hair) solid var(--color-error);
+  border-left-width: 3px;
+  background: var(--color-field);
+}
+
+.cform__summary-title {
+  font-weight: 600;
+  color: var(--color-error);
+}
+
+.cform__summary ul {
+  display: grid;
+  gap: var(--space-3xs);
+  margin-top: var(--space-2xs);
+  font-size: var(--text-sm);
+}
+
+.cform__summary a {
+  color: var(--color-ink);
+}
+
+/* Off-screen, not display:none, so simple bots still see and fill it. */
+.cform__trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.cform__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm) var(--space-lg);
+}
+
+.cform__submit {
+  min-width: 11.5rem;
+  justify-content: center;
+  padding-block: 0.9rem;
+}
+
+.cform__submit:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.cform__mode {
+  max-width: 34ch;
+  font-size: var(--text-xs);
+  color: var(--color-ink-soft);
+}
+
+.cform__failure {
+  padding: var(--space-sm) var(--space-md);
+  border-left: 3px solid var(--color-error);
+  background: var(--color-field);
+  font-size: var(--text-sm);
+}
+
+/* ───────────── After submit ───────────── */
+.cdone {
+  display: grid;
+  gap: var(--space-md);
+  justify-items: start;
+}
+
+.cdone:focus {
+  outline: none;
+}
+
+.cdone__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+}
+
+.cdone__text {
+  max-width: 52ch;
+  color: var(--color-ink-soft);
+}
+
+.cdone__copy {
+  display: grid;
+  gap: var(--space-xs);
+  justify-items: start;
+  width: 100%;
+}
+
+.cdone__copy-to {
+  font-size: var(--text-sm);
+}
+
+.cdone__addr {
+  font-weight: 600;
+  user-select: all;
+}
+
+.cdone__message {
+  width: 100%;
+  max-height: 16rem;
+  margin: 0;
+  padding: var(--space-sm);
+  overflow: auto;
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-field);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.cdone__copied {
+  font-size: var(--text-xs);
+  color: var(--color-ink-soft);
+}
+
+.cdone__back {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+/* ───────────── Responsive ───────────── */
+@media (max-width: 56rem) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 40rem) {
+  .contact__panel {
+    margin-inline: calc(var(--gutter) * -1);
+    padding: var(--space-lg) var(--gutter);
+  }
+
+  .cform__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cform__submit {
+    width: 100%;
+  }
+}

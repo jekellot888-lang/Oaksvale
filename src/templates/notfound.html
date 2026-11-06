@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-UG">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found · Oaks Shade Advocates</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#f1f0ec" />
+    <link rel="icon" href="/assets/oaks-logo.jpg" />
+    <script>
+      document.documentElement.classList.add('js');
+      try {
+        if (sessionStorage.getItem('osa-curtain')) document.documentElement.classList.add('curtain-in');
+      } catch (e) {}
+      document.documentElement.classList.add('seen');
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+{{chrome}}
+
+    <main id="main" data-subpage>
+      <section class="p-hero" id="top">
+        <div class="p-hero__grid">
+          <div class="p-hero__arch p-hero__arch--person" data-p-arch aria-hidden="true">
+            <span class="p-hero__letter" data-p-letter>404</span>
+          </div>
+          <div class="p-hero__copy">
+            <p class="label" data-p-meta>Page not found</p>
+            <h1 class="p-hero__title" data-p-title>This page isn't on the site</h1>
+            <p class="p-hero__intro" data-p-intro>
+              The link may be out of date, or the address mistyped. Start from the homepage, choose an area of
+              practice below, or <a href="/contact/">write to the Firm</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-next" aria-label="Areas of practice">
+        <a class="p-next__link" href="/" data-cursor-label="Home">
+          <span class="p-next__flood" aria-hidden="true"></span>
+          <span class="label">Back to</span>
+          <span class="p-next__title">The homepage</span>
+        </a>
+        <ol class="p-index" aria-label="All practice areas">
+{{index}}
+        </ol>
+      </section>
+    </main>
+
+{{footer}}
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

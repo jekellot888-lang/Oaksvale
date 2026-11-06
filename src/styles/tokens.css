@@ -1,0 +1,77 @@
+/* Hallmark · macrostructure: Marquee Hero (scroll-expanding arch) · tone: austere-authoritative · anchor hue: navy 278
+ * theme: custom · vibe: "chambers navy, oak leaf, brass scales, warm paper"
+ * paper oklch(95.2% 0.006 95) · accent oklch(68% 0.11 80) brass · ink oklch(27% 0.11 278) navy (from logo)
+ * display: Instrument Serif (upright only) · body: Hanken Grotesk
+ * axes: light / classical-serif / warm · nav: N9 edge-aligned + fullscreen overlay · footer: Ft5 statement
+ * motion reference: leome-and-partners.com (studied for behaviour; no code copied)
+ */
+
+:root {
+  /* Colour: every value is sampled from or tuned to the Oaks Shade logo */
+  --color-paper: oklch(95.2% 0.006 95);
+  --color-paper-2: oklch(91.6% 0.009 95);
+  --color-ink: oklch(27% 0.11 278);
+  --color-ink-soft: oklch(42% 0.055 278);
+  --color-night: oklch(19% 0.07 278);
+  --color-night-2: oklch(23.5% 0.085 278);
+  --color-on-night: oklch(94.5% 0.012 95);
+  --color-on-night-soft: oklch(79% 0.02 270);
+  --color-oak: oklch(47% 0.12 142);
+  --color-oak-light: oklch(78% 0.1 142);
+  --color-brass: oklch(68% 0.11 80);
+  --color-rule: oklch(27% 0.11 278 / 0.16);
+  --color-rule-night: oklch(94.5% 0.012 95 / 0.16);
+  --color-focus: oklch(68% 0.11 80);
+  --color-scrim: oklch(19% 0.07 278 / 0.5);
+  --color-field: oklch(98.6% 0.004 95);
+  --color-field-border: oklch(58% 0.03 278); /* ≥3:1 against paper and paper-2 (WCAG 1.4.11) */
+  --color-error: oklch(47% 0.17 28);
+
+  /* Type */
+  --font-display: 'Instrument Serif', 'Times New Roman', serif;
+  --font-body: 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: clamp(1.0625rem, 0.98rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  --text-2xl: clamp(1.625rem, 1.3rem + 1.3vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 1.6rem + 2.6vw, 4rem);
+  --text-4xl: clamp(2.75rem, 1.8rem + 4vw, 5.75rem);
+  --text-hero: clamp(4.25rem, 1rem + 13vw, 15rem);
+
+  --leading-tight: 0.95;
+  --leading-snug: 1.15;
+  --leading-body: 1.55;
+  --tracking-display: -0.02em;
+  --tracking-caps: 0.14em;
+
+  /* Space: 4pt scale */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+  --space-4xl: 10rem;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --measure: 62ch;
+
+  /* Lines and shape */
+  --rule-hair: 1px;
+  --radius-pill: 999px;
+  --radius-sm: 4px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-press: 140ms;
+  --dur-fast: 200ms;
+  --dur-base: 450ms;
+  --dur-slow: 800ms;
+}

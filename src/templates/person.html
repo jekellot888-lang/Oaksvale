@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-UG">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{name}}, {{role}} · Oaks Shade Advocates</title>
+    <meta name="description" content="{{description}}" />
+    <meta name="theme-color" content="#f1f0ec" />
+    <link rel="icon" href="/assets/oaks-logo.jpg" />
+    <script>
+      document.documentElement.classList.add('js');
+      try {
+        if (sessionStorage.getItem('osa-curtain')) document.documentElement.classList.add('curtain-in');
+      } catch (e) {}
+      document.documentElement.classList.add('seen');
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+{{chrome}}
+
+    <main id="main" data-subpage>
+      <section class="p-hero" id="top">
+        <nav class="p-hero__crumbs" aria-label="Breadcrumb">
+          <a href="/#people">Our people</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{{name}}</span>
+        </nav>
+
+        <div class="p-hero__grid">
+          <div class="p-hero__arch p-hero__arch--person{{archClass}}" data-p-arch{{archHidden}}>
+            {{arch}}
+          </div>
+          <div class="p-hero__copy">
+            <p class="label" data-p-meta>{{group}}</p>
+            <h1 class="p-hero__title" data-p-title>{{name}}</h1>
+            <p class="p-hero__role" data-p-intro>{{role}}</p>{{focus}}
+          </div>
+        </div>
+      </section>
+
+      <section class="p-services" aria-labelledby="quals-title">
+        <h2 class="label" id="quals-title">Qualifications</h2>
+        <ol class="p-services__list">
+{{qualifications}}
+        </ol>
+      </section>
+{{bio}}
+      <section class="p-instruct">
+        <div class="p-instruct__head">
+          <h2 class="section-title" data-reveal>Get in touch</h2>
+          {{contact}}
+          <a class="btn btn--ink" href="/contact/?for={{slug}}" data-roll data-cursor-label="Write">Write to the Firm</a>
+        </div>
+        <ul class="p-instruct__partners">
+{{partners}}
+        </ul>
+      </section>
+
+      <section class="p-next" aria-label="Next profile">
+        <a class="p-next__link" href="/people/{{nextSlug}}/" data-cursor-label="Next">
+          <span class="p-next__flood" aria-hidden="true"></span>
+          <span class="label">Next profile</span>
+          <span class="p-next__title"><span class="p-next__letter">{{nextInitials}}</span>{{nextName}}</span>
+        </a>
+        <ol class="p-index" aria-label="All of our people">
+{{index}}
+        </ol>
+      </section>
+    </main>
+
+{{footer}}
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

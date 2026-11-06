@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en-UG">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instruct the Firm · Oaks Shade Advocates</title>
+    <meta
+      name="description"
+      content="Contact Oaks Shade Advocates, Plot 3 Pilkington Road, NIC Building Annex, Kampala. Send the Firm a short outline of your matter."
+    />
+    <meta name="theme-color" content="#f1f0ec" />
+    <link rel="icon" href="/assets/oaks-logo.jpg" />
+    <script>
+      document.documentElement.classList.add('js');
+      try {
+        if (sessionStorage.getItem('osa-curtain')) document.documentElement.classList.add('curtain-in');
+      } catch (e) {}
+      document.documentElement.classList.add('seen');
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+{{chrome}}
+
+    <main id="main" class="contact">
+      <div class="contact__grid" id="top">
+        <aside class="contact__aside">
+          <h1 class="contact__title" data-reveal>Instruct the Firm</h1>
+          <p class="contact__lede">
+            Tell us briefly what the matter is about and how to reach you, and a member of the Firm will reply.
+          </p>
+
+          <div class="contact__notice" role="note">
+            <p>
+              Please keep this first message short and leave out confidential details and documents. Sending it
+              doesn't make Oaks Shade Advocates your lawyers; that starts once the Firm has agreed to act for you.
+            </p>
+          </div>
+
+          <dl class="contact__details">
+            <div>
+              <dt class="label">Chambers</dt>
+              <dd>{{address}}</dd>
+            </div>
+            <div>
+              <dt class="label">Post</dt>
+              <dd>{{post}}</dd>
+            </div>
+            <div>
+              <dt class="label">Email</dt>
+              <dd><a href="mailto:{{email}}">{{email}}</a></dd>
+            </div>
+            <div>
+              <dt class="label">Partners</dt>
+              <dd>
+                <ul class="contact__phones">
+{{partnerPhones}}
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </aside>
+
+        <section class="contact__panel" aria-labelledby="form-title">
+          <h2 class="visually-hidden" id="form-title">Message the Firm</h2>
+
+          <form class="cform" id="contact-form" novalidate data-contact-form>
+            <div class="cform__summary" id="cform-summary" tabindex="-1" hidden>
+              <p class="cform__summary-title">Some details need another look</p>
+              <ul></ul>
+            </div>
+
+            <div class="cform__row">
+              <div class="field">
+                <label for="cf-name">Your name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="cf-name-error" />
+                <p class="field__error" id="cf-name-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="cf-org">Organisation <span class="field__opt">optional</span></label>
+                <input id="cf-org" name="organisation" type="text" autocomplete="organization" maxlength="160" />
+              </div>
+            </div>
+
+            <div class="cform__row">
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="200" aria-describedby="cf-email-error" />
+                <p class="field__error" id="cf-email-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="cf-phone">Phone <span class="field__opt">optional</span></label>
+                <input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" aria-describedby="cf-phone-hint cf-phone-error" />
+                <p class="field__hint" id="cf-phone-hint">Include the country code if you're outside Uganda.</p>
+                <p class="field__error" id="cf-phone-error" hidden></p>
+              </div>
+            </div>
+
+            <div class="cform__row">
+              <div class="field">
+                <label for="cf-matter">What is it about?</label>
+                <select id="cf-matter" name="matter" required aria-describedby="cf-matter-error">
+                  <option value="">Choose an area</option>
+{{matterOptions}}
+                  <option value="other">Something else</option>
+                </select>
+                <p class="field__error" id="cf-matter-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="cf-person">For the attention of <span class="field__opt">optional</span></label>
+                <select id="cf-person" name="person">
+                  <option value="">Whoever is best placed</option>
+{{personOptions}}
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cf-message">Outline of the matter</label>
+              <textarea id="cf-message" name="message" rows="6" required minlength="20" maxlength="2000" aria-describedby="cf-message-hint cf-message-error"></textarea>
+              <p class="field__hint" id="cf-message-hint"><span data-count>0</span> / 2000 characters. A few sentences is enough.</p>
+              <p class="field__error" id="cf-message-error" hidden></p>
+            </div>
+
+            <fieldset class="field field--choice">
+              <legend>How should we reply?</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="reply" value="email" checked /> <span>By email</span></label>
+                <label class="choice"><input type="radio" name="reply" value="phone" /> <span>By phone</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field field--consent">
+              <label class="choice choice--consent">
+                <input id="cf-consent" name="consent" type="checkbox" required aria-describedby="cf-consent-error" />
+                <span>I understand this message doesn't make the Firm my lawyers, and I haven't included confidential details.</span>
+              </label>
+              <p class="field__error" id="cf-consent-error" hidden></p>
+            </div>
+
+            <!-- Spam trap: hidden from people, filled in by bots. -->
+            <div class="cform__trap" aria-hidden="true">
+              <label for="cf-website">Website</label>
+              <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="cform__actions">
+              <button class="btn btn--ink cform__submit" type="submit" data-submit>
+                <span class="cform__submit-label" data-submit-label>Send to the Firm</span>
+              </button>
+              <p class="cform__mode" data-mode-note></p>
+            </div>
+
+            <p class="cform__failure" data-failure role="alert" hidden></p>
+          </form>
+
+          <div class="cdone" data-done tabindex="-1" hidden>
+            <p class="label" data-done-label></p>
+            <h2 class="cdone__title" data-done-title></h2>
+            <p class="cdone__text" data-done-text></p>
+            <div class="cdone__copy" data-done-copy hidden>
+              <p class="cdone__copy-to">To: <span class="cdone__addr">{{email}}</span></p>
+              <pre class="cdone__message" data-done-message></pre>
+              <button class="btn" type="button" data-copy>Copy the message</button>
+              <p class="cdone__copied" data-copied aria-live="polite"></p>
+            </div>
+            <a class="cdone__back" href="/">Back to the homepage</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+{{footer}}
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
